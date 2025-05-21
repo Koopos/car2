@@ -98,7 +98,6 @@ onMounted(() => {
     <div class="container" v-else>
       <div class="car" v-for="car in tableData" :key="car">{{car}}</div>
     </div>
-    {{page}}
     <div class="pagination">
       <div @click="jump(item)" :class="{ page: true, selected: page == item }" v-for="item in paginationList">{{item}}</div>
     </div>
