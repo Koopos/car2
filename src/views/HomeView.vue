@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ref, computed, watch, onMounted} from 'vue';
 import CarTypeFilter from '@/components/CarTypeFilter.vue'
+import MobileScroll from '@/components/MobileScroll.vue'
 import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
@@ -93,7 +94,8 @@ onMounted(() => {
     <div class="filters">
       <CarTypeFilter v-if="!isMobile"/>
     </div>
-    <div class="container">
+    <MobileScroll v-if="isMobile" />
+    <div class="container" v-else>
       <div class="car" v-for="car in tableData" :key="car">{{car}}</div>
     </div>
     {{page}}
